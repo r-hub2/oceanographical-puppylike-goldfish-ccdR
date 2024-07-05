@@ -2,7 +2,7 @@
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  eval = (nchar(Sys.getenv('CCTE_API_KEY')) > 0)
+  eval = (nchar(Sys.getenv('CTX_API_KEY')) > 0)
 )
 library(httptest)
 start_vignette("1")
@@ -41,12 +41,12 @@ start_vignette("1")
 #  devtools::install_github("USEPA/ccdR")
 
 ## ----echo = FALSE-------------------------------------------------------------
-#  my_key <- ccte_key()
+#  my_key <- ctx_key()
 
 ## ----eval = FALSE, api-key----------------------------------------------------
-#  my_key <- 'YOUR_CCTE_API_key'
+#  my_key <- 'YOUR_CTX_API_key'
 
-## ----register-ccte, eval=FALSE------------------------------------------------
+## ----register-ccdr, eval=FALSE------------------------------------------------
 #  # This stores the key in the current session
 #  register_ccdr(key = '<YOUR API KEY>')
 #  
@@ -62,8 +62,8 @@ start_vignette("1")
 #  ccdr_hide_api_key()
 #  getOption('ccdr')$display_api_key
 
-## ----ccte-key, eval = FALSE---------------------------------------------------
-#  ccte_key()
+## ----ctx-key, eval = FALSE----------------------------------------------------
+#  ctx_key()
 
 ## ----bpa-chem-details---------------------------------------------------------
 #  bpa_details <- get_chemical_details(DTXSID = 'DTXSID7020182',
